@@ -33,13 +33,13 @@ const createRelease = async (
       );
     }
 
-    await octokit.repos.createRelease({
-      name: tagName,
-      tag_name: tagName,
-      body: changelogEntry.content,
-      prerelease: pkg.packageJson.version.includes("-"),
-      ...github.context.repo,
-    });
+//     await octokit.repos.createRelease({
+//       name: tagName,
+//       tag_name: tagName,
+//       body: changelogEntry.content,
+//       prerelease: pkg.packageJson.version.includes("-"),
+//       ...github.context.repo,
+//     });
   } catch (err) {
     // if we can't find a changelog, the user has probably disabled changelogs
     if (err.code !== "ENOENT") {
